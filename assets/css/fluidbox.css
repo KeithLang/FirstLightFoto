@@ -1,0 +1,70 @@
+.fluidbox {
+  outline: none; }
+
+.fluidbox-overlay {
+  background-color: rgba(0, 0, 0, 0.65);
+  cursor: pointer;
+  cursor: -webkit-zoom-out;
+  cursor: -moz-zoom-out;
+  opacity: 0;
+  position: fixed;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  /* Transition time for overlay is halved to ensure that flickering doesn't happen */
+  transition: all 0.125s ease-in-out 1.125s; }
+
+.fluidbox-wrap {
+  background-position: center center;
+  background-size: cover;
+  margin: 0 auto;
+  position: relative;
+  transition: all 0.25s ease-in-out;
+  /* To prevent flickering, we delay the showing of the image */ }
+  .fluidbox-closed .fluidbox-wrap img {
+    transition: opacity 0 ease-in-out 0.25s; }
+
+.fluidbox-ghost {
+  background-size: 100% 100%;
+  background-position: center center;
+  position: absolute;
+  -webkit-transition-property: opacity, -webkit-transform;
+  -moz-transition-property: opacity, -moz-transform;
+  -o-transition-property: opacity, -o-transform;
+  transition-property: opacity, transform;
+  transition-duration: 0, 0.25s;
+  transition-delay: 0.25s, 0; }
+  .fluidbox-opened .fluidbox-ghost {
+    transition-delay: 0, 0; }
+
+
+
+
+img
+          {
+            width: 30.75em; /* 140 */
+            height: 30.75em; /* 140 */
+            border-color:#fff;
+            border: 0.325em solid rgba( 255, 255, 255, .9 ); /* 10 */
+
+            -webkit-box-shadow: 0 0 0.313em rgba( 255, 255, 255, .05 ); /* 5 */
+            box-shadow: 0 0 0.313em rgba( 255, 255, 255, .05 ); /* 5 */
+
+            -webkit-transition: -webkit-box-shadow .3s ease, border-color .3s ease;
+            transition: box-shadow .3s ease, border-color .3s ease;
+          }
+
+
+#imagecontainer
+ img:hover,
+            #imagecontainer
+ img:focus
+            {
+              border-color: #000;
+
+              -webkit-box-shadow: 0 0 0.938em rgba( 255, 255, 255 , .25 ); /* 15 */
+              box-shadow: 0 0 0.938em rgba( 255, 255, 255, .25 ); /* 15 */
+            }
+
+        
